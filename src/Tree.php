@@ -11,7 +11,7 @@ namespace xooooooox\awe;
 
 /**
  * Class Tree
- * @package xooooooox\boxes
+ * @package xooooooox\awe
  */
 class Tree
 {

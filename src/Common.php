@@ -11,7 +11,7 @@ namespace xooooooox\awe;
 
 /**
  * Class Common
- * @package xooooooox\boxes
+ * @package xooooooox\awe
  */
 class Common
 {

@@ -11,7 +11,7 @@ namespace xooooooox\awe;
 
 /**
  * Class ApiStatusCode
- * @package xooooooox\boxes
+ * @package xooooooox\awe
  */
 class ApiStatusCode
 {

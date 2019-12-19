@@ -11,7 +11,7 @@ namespace xooooooox\awe;
 
 /**
  * Class ApiDocument
- * @package xooooooox\boxes
+ * @package xooooooox\awe
  */
 class ApiDocument
 {

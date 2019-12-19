@@ -11,7 +11,7 @@ namespace xooooooox\awe;
 
 /**
  * Class Time
- * @package xooooooox\boxes
+ * @package xooooooox\awe
  */
 class Time
 {
