@@ -1,0 +1,25 @@
+{
+  "name": "xooooooox/awe",
+  "description": "common class library",
+  "type": "library",
+  "keywords": [
+    "xooooooox",
+    "awe",
+    "library"
+  ],
+  "time": "2019-12-19",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "xooooooox"
+    }
+  ],
+  "require": {
+    "php": ">=7.2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "xooooooox\\awe\\": "src"
+    }
+  }
+}
