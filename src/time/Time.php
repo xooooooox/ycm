@@ -95,7 +95,7 @@ class Time
      * @return int
      */
     public static function LastWeekEndUnix(){
-        $result = mktime(23,59,59, date('m'),date('d') - date('w') + 7 - 7, date('Y')) + 1;
+        $result = mktime(23,59,59, date('m'),date('d') - date('w') + 7 - 7, date('Y'));
         if (is_bool($result)){
             return 0;
         }
@@ -146,7 +146,7 @@ class Time
      * @return int
      */
     public static function ThisMonthEndUnix(){
-        $result = mktime(23,59,59, date('m'), date('t'), date('Y')) + 1;
+        $result = mktime(23,59,59, date('m'), date('t'), date('Y'));
         if (is_bool($result)){
             return 0;
         }
@@ -170,7 +170,7 @@ class Time
      */
     public static function LastQuarterEndUnix(){
         $quarter = ceil((date('n')) / 3) - 1;
-        $result = mktime(23,59,59,$quarter * 3, date('t', mktime(0, 0 , 0,$quarter * 3,1, date('Y'))), date('Y')) + 1;
+        $result = mktime(23,59,59,$quarter * 3, date('t', mktime(0, 0 , 0,$quarter * 3,1, date('Y'))), date('Y'));
         if (is_bool($result)){
             return 0;
         }
@@ -194,7 +194,7 @@ class Time
      */
     public static function ThisQuarterEndUnix(){
         $quarter = ceil((date('n')) / 3);
-        $result = mktime(23,59,59,$quarter * 3, date('t', mktime(0, 0 , 0,$quarter * 3,1, date('Y'))), date('Y')) + 1;
+        $result = mktime(23,59,59,$quarter * 3, date('t', mktime(0, 0 , 0,$quarter * 3,1, date('Y'))), date('Y'));
         if (is_bool($result)){
             return 0;
         }
@@ -218,7 +218,7 @@ class Time
      */
     public static function NextQuarterEndUnix(){
         $quarter = ceil((date('n')) / 3) + 1;
-        $result = mktime(23,59,59,$quarter * 3, date('t', mktime(0, 0 , 0,$quarter * 3,1, date('Y'))), date('Y')) + 1;
+        $result = mktime(23,59,59,$quarter * 3, date('t', mktime(0, 0 , 0,$quarter * 3,1, date('Y'))), date('Y'));
         if (is_bool($result)){
             return 0;
         }
@@ -240,7 +240,7 @@ class Time
      * @return int
      */
     public static function ThisYearEndUnix(){
-        $result = strtotime(date('Y', time()).'-12'.'-31');
+        $result = strtotime(date('Y', time()).'-12-31 23:59:59');
         if (is_bool($result)){
             return 0;
         }

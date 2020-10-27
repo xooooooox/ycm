@@ -36,20 +36,16 @@ class Xml
      */
     public static function ArrayToXml($data,$isChild){
         $str = '';
-        if(!$isChild){
-            $str .= '<xml>';
-        }
         foreach($data as $key => $val){
             if(is_array($val)){
                 $str .= '<'.$key.'>'.static::ArrayToXml($val, true).'</'.$key.'>';
-            } elseif(is_numeric($val)){
-                $str .= '<'.$key.'>'.$val.'</'.$key.'>';
             }else{
-                $str .= '<'.$key.'><![CDATA['.$val.']]></'.$key.'>';
+                $str .= '<'.$key.'>'.$val.'</'.$key.'>';
             }
+            $str = $str."\n";
         }
         if(!$isChild){
-            $str .= '</xml>';
+            $str .= "<xml>\n".$str."</xml>\n";
         }
         return $str;
     }
