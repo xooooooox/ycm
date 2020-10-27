@@ -1,25 +1,26 @@
 {
-  "name": "xooooooox/awe",
-  "description": "common class library",
+  "name": "xooooooox/ycm",
+  "description": "php common tools",
   "type": "library",
   "keywords": [
     "xooooooox",
-    "awe",
+    "ycm",
     "library"
   ],
-  "time": "2019-12-19",
+  "time": "2020-10-26",
   "license": "MIT",
   "authors": [
     {
-      "name": "xooooooox"
+      "name": "xooooooox",
+      "email": "718337253@qq.com"
     }
   ],
   "require": {
-    "php": ">=7.2.0"
+    "php": ">=7.0.0"
   },
   "autoload": {
     "psr-4": {
-      "xooooooox\\awe\\": "src"
+      "xooooooox\\ycm\\": "src"
     }
   }
 }
