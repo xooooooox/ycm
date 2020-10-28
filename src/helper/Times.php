@@ -34,18 +34,26 @@ class Times
      * @return float
      */
     public static function NowUnixMilli(){
-        list($t1,$t2) = explode(' ', microtime());
+        list($t1, $t2) = explode(' ', microtime());
         return (float)sprintf('%.0f',(floatval($t1) + floatval($t2)) * 1000);
     }
-
-    /**
-     * 当前时间
-     * @param int $time
-     * @return string
-     */
-    public static function NowTime($time = 0){
-        $time = $time === 0 ? self::NowUnix() : $time;
-        return (string)date(self::StandardFormat, $time);
+	
+	/**
+	 * 替换date函数,返回字符串
+	 * @param string $format
+	 * @param int $unix
+	 * @return string
+	 */
+	public static function Date($format = '', $unix = 0){
+		return (string)date($format, $unix);
+	}
+	
+	/**
+	 * 当前时间
+	 * @return string
+	 */
+    public static function NowTime(){
+        return self::Date(self::StandardFormat, self::NowUnix());
     }
 
     /**
@@ -54,7 +62,7 @@ class Times
      * @return string
      */
     public static function ToTime($unix = 0){
-        return (string)date(self::StandardFormat, $unix);
+        return self::Date(self::StandardFormat, $unix);
     }
 
     /**
@@ -67,22 +75,12 @@ class Times
     }
 
     /**
-     * 替换date函数
-     * @param string $format
-     * @param int $unix
-     * @return int
-     */
-    public static function Date($format = '', $unix = 0){
-        return (int)date($format,$unix);
-    }
-
-    /**
      * 年
      * @param int $time
      * @return int
      */
     public static function Year($time = 0){
-        return self::Date('Y',$time);
+        return (int)self::Date('Y', $time);
     }
 
     /**
@@ -91,7 +89,7 @@ class Times
      * @return int
      */
     public static function Month($time = 0){
-        return self::Date('m',$time);
+        return (int)self::Date('m', $time);
     }
 
     /**
@@ -100,7 +98,7 @@ class Times
      * @return int
      */
     public static function Day($time = 0){
-        return self::Date('d',$time);
+        return (int)self::Date('d', $time);
     }
 
     /**
@@ -109,7 +107,7 @@ class Times
      * @return int
      */
     public static function Hour($time = 0){
-        return self::Date('H',$time);
+        return (int)self::Date('H', $time);
     }
 
     /**
@@ -118,7 +116,7 @@ class Times
      * @return int
      */
     public static function Minute($time = 0){
-        return self::Date('i',$time);
+        return (int)self::Date('i', $time);
     }
 
     /**
@@ -127,7 +125,7 @@ class Times
      * @return int
      */
     public static function Second($time = 0){
-        return self::Date('s',$time);
+        return (int)self::Date('s', $time);
     }
 
     /**
