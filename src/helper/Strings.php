@@ -1,38 +1,40 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2020/10/26 0026
- * Time: 18:35
+ * Created by PhpStorm
+ * User: xooooooox
+ * Date: 2020/10/28 0028
+ * Time: 10:58
  */
 
-namespace xooooooox\ycm\types;
+namespace xooooooox\ycm\helper;
 
 
 /**
  * Class Strings
- * @package xooooooox\ycm\types
+ * @package xooooooox\ycm\helper
  */
 class Strings
 {
 
     /**
+     * 获取一个随机字符串
      * @param int $length
      * @param string $chars
      * @return string
      */
-    public static function Random($length, $chars){
-        $length = (int)$length < 1 ? 6 : (int)$length;
-        $chars = strlen($chars) < 2 ? static::Number() : (string)$chars;
-        $str = '';
+    public static function Random($length = 6, $chars = ''){
+        $length = $length < 1 ? 6 : $length;
+        $chars = strlen($chars) < 2 ? self::Number() : $chars;
+        $result = '';
         $len = strlen($chars);
         for($i=0;$i<$length;$i++){
-            $str .= $chars[mt_rand(0,$len-1)];
+            $result .= $chars[mt_rand(0,$len-1)];
         }
-        return $str;
+        return $result;
     }
 
     /**
+     * 字母字符串
      * @return string
      */
     public static function Letter(){
@@ -40,6 +42,7 @@ class Strings
     }
 
     /**
+     * 小写字母字符串
      * @return string
      */
     public static function LetterLower(){
@@ -47,6 +50,7 @@ class Strings
     }
 
     /**
+     * 大写字母字符串
      * @return string
      */
     public static function LetterUpper(){
@@ -54,6 +58,7 @@ class Strings
     }
 
     /**
+     * 数字字符串
      * @return string
      */
     public static function Number(){
@@ -61,13 +66,14 @@ class Strings
     }
 
     /**
+     * 符号字符串 $punctuate:是否包含标点符号
      * @param bool $punctuate
      * @return string
      */
-    public static function Symbol($punctuate){
+    public static function Symbol($punctuate = false){
         $result = '!@#$%^&*()_+-=';
         if($punctuate){
-            $result = $result.'[]{};:,./<>?\|';
+            $result = $result.'[]{};:,./<>?\|`~';
         }
         return $result;
     }

@@ -1,31 +1,30 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2020/10/26 0026
- * Time: 18:51
+ * Created by PhpStorm
+ * User: xooooooox
+ * Date: 2020/10/28 0028
+ * Time: 17:13
  */
 
-namespace xooooooox\ycm\utils;
+namespace xooooooox\ycm\helper;
 
 
 /**
- * Class Distance
- * @package xooooooox\ycm\utils
+ * Class Distances
+ * @package xooooooox\ycm\helper
  */
-class Distance
+class Distances
 {
 
     /**
-     * settle the distance between two locations
-     * unit: meters
+     * 计算地球上两个位置之间的距离,返回结果(单位:米)
      * @param float $lng1
      * @param float $lat1
      * @param float $lng2
      * @param float $lat2
      * @return float
      */
-    public static function Count($lng1, $lat1, $lng2, $lat2){
+    public static function Earth($lng1 = 0.0, $lat1 = 0.0, $lng2 = 0.0, $lat2 = 0.0){
         $radLat1 = deg2rad($lat1);
         $radLat2 = deg2rad($lat2);
         $radLng1 = deg2rad($lng1);
