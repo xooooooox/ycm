@@ -73,7 +73,7 @@ class Strings
     public static function Symbol($punctuate = false){
         $result = '!@#$%^&*()_+-=';
         if($punctuate){
-            $result = $result.'[]{};:,./<>?\|`~';
+            $result .= '[]{};:,./<>?\|`~';
         }
         return $result;
     }
